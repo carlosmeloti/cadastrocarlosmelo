@@ -1,0 +1,8 @@
+CREATE TABLE cadastro(
+cpf bigint,
+nome varchar,
+sexo varchar,
+email varchar,
+dataNascimento date,
+naturalidade varchar,
+nacionalidade varchar);

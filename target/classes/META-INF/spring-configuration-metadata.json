@@ -1,0 +1,28 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties",
+      "name": "carlosmeloapi",
+      "type": "br.carlosmelo.api.config.property.CarlosMeloApiProperties"
+    },
+    {
+      "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties",
+      "name": "carlosmeloapi.seguranca",
+      "sourceMethod": "public br.carlosmelo.api.config.property.CarlosMeloApiProperties.Seguranca getSeguranca() ",
+      "type": "br.carlosmelo.api.config.property.CarlosMeloApiProperties$Seguranca"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties",
+      "name": "carlosmeloapi.origin-permitida",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties$Seguranca",
+      "name": "carlosmeloapi.seguranca.enable-https",
+      "type": "java.lang.Boolean"
+    }
+  ]
+}

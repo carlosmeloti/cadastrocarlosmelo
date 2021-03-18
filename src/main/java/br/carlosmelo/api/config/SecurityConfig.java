@@ -25,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/cadastro/source").permitAll()
+				.antMatchers("/cadastro").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.httpBasic().and()

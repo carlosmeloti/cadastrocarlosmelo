@@ -1,0 +1,9 @@
+br\carlosmelo\api\event\listener\RecursoCriadoListener.class
+br\carlosmelo\api\event\RecursoCriadoEvent.class
+br\carlosmelo\api\CarlosMeloApiApplication.class
+br\carlosmelo\api\config\SecurityConfig.class
+br\carlosmelo\api\repository\CadastroRepository.class
+br\carlosmelo\api\exceptionhandler\CarlosMeloExceptionHandler$Erro.class
+br\carlosmelo\api\model\Cadastro.class
+br\carlosmelo\api\resource\CadastroResource.class
+br\carlosmelo\api\exceptionhandler\CarlosMeloExceptionHandler.class

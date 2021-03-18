@@ -56,7 +56,6 @@ public class CadastroResource {
 	}
 	
 	@GetMapping("/{cpf}")
-	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_CATEGORIA') and #oauth2.hasScope('read')")
 	public Cadastro buscarPeloCodigo(@PathVariable Long cpf) {
 			return cadastroRepository.getOne(cpf);
 	}

@@ -6,3 +6,16 @@ email varchar,
 dataNascimento date,
 naturalidade varchar,
 nacionalidade varchar);
+
+CREATE TABLE public.cadastro
+(
+  id bigint NOT NULL,
+  cpf character varying,
+  nome character varying,
+  sexo character varying,
+  email character varying,
+  datanascimento date,
+  naturalidade character varying,
+  nacionalidade character varying,
+  alterado timestamp without time zone
+)

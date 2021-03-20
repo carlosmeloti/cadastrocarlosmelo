@@ -1,8 +1,12 @@
+br\carlosmelo\api\config\property\CarlosMeloApiProperties.class
+br\carlosmelo\api\config\cors\CorsFilter.class
 br\carlosmelo\api\event\listener\RecursoCriadoListener.class
 br\carlosmelo\api\event\RecursoCriadoEvent.class
 br\carlosmelo\api\CarlosMeloApiApplication.class
 br\carlosmelo\api\config\SecurityConfig.class
+br\carlosmelo\api\config\property\CarlosMeloApiProperties$Seguranca.class
 br\carlosmelo\api\repository\CadastroRepository.class
+META-INF\spring-configuration-metadata.json
 br\carlosmelo\api\exceptionhandler\CarlosMeloExceptionHandler$Erro.class
 br\carlosmelo\api\model\Cadastro.class
 br\carlosmelo\api\resource\CadastroResource.class

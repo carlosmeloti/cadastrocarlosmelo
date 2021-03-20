@@ -9,18 +9,20 @@
     {
       "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties",
       "name": "carlosmeloapi.seguranca",
-      "sourceMethod": "public br.carlosmelo.api.config.property.CarlosMeloApiProperties.Seguranca getSeguranca() ",
+      "sourceMethod": "getSeguranca()",
       "type": "br.carlosmelo.api.config.property.CarlosMeloApiProperties$Seguranca"
     }
   ],
   "properties": [
     {
       "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties",
+      "defaultValue": "http:\/\/localhost:4200",
       "name": "carlosmeloapi.origin-permitida",
       "type": "java.lang.String"
     },
     {
       "sourceType": "br.carlosmelo.api.config.property.CarlosMeloApiProperties$Seguranca",
+      "defaultValue": false,
       "name": "carlosmeloapi.seguranca.enable-https",
       "type": "java.lang.Boolean"
     }

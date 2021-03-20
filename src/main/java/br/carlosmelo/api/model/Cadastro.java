@@ -1,38 +1,48 @@
 package br.carlosmelo.api.model;
 
-import java.util.Date;
+import java.sql.Date;
+import java.util.Calendar;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Null;
 
 
 @Entity
 @Table(name="cadastro")
 public class Cadastro {
 	
-	@Id	//Sendo id, é único.
+	@Id	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;	
 	@NotNull
-	private Long cpf;	
+	private String cpf;	
 	@NotNull
 	private String nome;	
-	//Não especificou nada
 	private String sexo;	
 	private String email;	
 	@NotNull
-	private Date dataNascimento;	
-	//Não especificou nada
+	private Date datanascimento;
 	private String naturalidade;	
-	//Não especificou nada
 	private String nacionalidade;
+	private Calendar alterado = Calendar.getInstance();
 	
 	
-	public Long getCpf() {
+	
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getCpf() {
 		return cpf;
 	}
-	public void setCpf(Long cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
 	public String getNome() {
@@ -53,11 +63,12 @@ public class Cadastro {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Date getDataNascimento() {
-		return dataNascimento;
+	
+	public Date getDatanascimento() {
+		return datanascimento;
 	}
-	public void setDataNascimento(Date dataNascimento) {
-		this.dataNascimento = dataNascimento;
+	public void setDatanascimento(Date datanascimento) {
+		this.datanascimento = datanascimento;
 	}
 	public String getNaturalidade() {
 		return naturalidade;
@@ -94,6 +105,8 @@ public class Cadastro {
 			return false;
 		return true;
 	}
+	
+	
 	
 	
 	

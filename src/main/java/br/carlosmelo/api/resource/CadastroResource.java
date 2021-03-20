@@ -39,7 +39,9 @@ public class CadastroResource {
 	
 	@GetMapping("/source")
 	public String retornoGit() {
-		return "Nhain";
+	
+		return "Git: " + "https://github.com/carlosmeloti/cadastrocarlosmelo" +
+		 " e " + "https://github.com/carlosmeloti/cadastrocarlosmeloti-ui" ;
 	}
 	
 	@Autowired
@@ -50,27 +52,27 @@ public class CadastroResource {
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_CATEGORIA') and #oauth2.hasScope('write')")
 	public ResponseEntity<Cadastro>  criar(@Valid @RequestBody Cadastro cadastro, HttpServletResponse response) {
 		Cadastro categoriaSalva = cadastroRepository.save(cadastro);
-		publisher.publishEvent(new RecursoCriadoEvent(this, response, categoriaSalva.getCpf()));
+		publisher.publishEvent(new RecursoCriadoEvent(this, response, categoriaSalva.getId()));
 			
 		return ResponseEntity.status(HttpStatus.CREATED).body(categoriaSalva);
 	}
 	
-	@GetMapping("/{cpf}")
-	public Cadastro buscarPeloCodigo(@PathVariable Long cpf) {
-			return cadastroRepository.getOne(cpf);
+	@GetMapping("/{id}")
+	public Cadastro buscarPeloCodigo(@PathVariable Long id) {
+			return cadastroRepository.getOne(id);
 	}
 	
-	@DeleteMapping("/{cpf}")
+	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void remover(@PathVariable Long cpf) {
-		cadastroRepository.deleteById(cpf);
+	public void remover(@PathVariable Long id) {
+		cadastroRepository.deleteById(id);
 	}
 	
-	@PutMapping("/{cpf}")
+	@PutMapping("/{id}")
     @PreAuthorize("hasAuthority('ROLE_CADASTRAR_GENERO') and #oauth2.hasScope('write')")
-	public ResponseEntity<Cadastro> atualizar (@PathVariable Long cpf, @Valid @RequestBody Cadastro cadastro){
-		Cadastro cadastroSalvo = cadastroRepository.getOne(cpf);		
-		 BeanUtils.copyProperties(cadastro, cadastroSalvo, "cpf");
+	public ResponseEntity<Cadastro> atualizar (@PathVariable Long id, @Valid @RequestBody Cadastro cadastro){
+		Cadastro cadastroSalvo = cadastroRepository.getOne(id);		
+		 BeanUtils.copyProperties(cadastro, cadastroSalvo, "id");
 		 cadastroRepository.save(cadastroSalvo);
 		 return ResponseEntity.ok(cadastroSalvo);
 	}
